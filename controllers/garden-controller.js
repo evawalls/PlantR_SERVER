@@ -28,7 +28,7 @@ router.get("/gallery", validateSession, (req, res) => {
 });
 
 router.get("/getgardens", validateSession, (req, res) => {
-  //let userId = req.user.id
+  let userId = req.user.id
   Garden.findAll({
     where: {userId: userId}
 })
@@ -37,7 +37,7 @@ router.get("/getgardens", validateSession, (req, res) => {
 });
 
 router.put('/updateGarden/:id', validateSession, function(req, res) {
-  const updateGardens = {
+  const updateGarden = {
     userId: req.user.id,
       name: req.body.garden.name,
       location: req.body.garden.locationId,

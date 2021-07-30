@@ -20,13 +20,15 @@ router.post('/register', function (req, res) {
     })
       .then(function createSuccess(user) {
         let token = jwt.sign({ id: user.id, first_name: user.first_name }, process.env.JWT_SECRET, {
-          expiresIn: 60 * 60 * 24,
-        }); 
+          expiresIn: 60 * 60 * 24, 
+        });
+        let first_name = req.body.user.first_name;  
   
         res.status(200).json({
           user: user,
           message: "User successfully created!",
           sessionToken: token,
+          first_name: first_name,
         });
       })
       .catch((err) => res.status(500).json({ error: err }));
@@ -47,12 +49,15 @@ router.post('/register', function (req, res) {
             if (matches) {
               let token = jwt.sign({ id: user.id, first_name: user.first_name }, process.env.JWT_SECRET, {
                 expiresIn: 60 * 60 * 24,
+              
               });
+              let first_name = user.first_name;
   
               res.status(200).json({
                 user: user,
                 message: "User successfully logged in!",
                 sessionToken: token,
+                first_name: first_name,
               });
             } else {
               res.status(502).send({ error: "Login Failed" });
