@@ -26,5 +26,5 @@
     app.use('/log', log);
 
     app.listen(process.env.PORT, () =>{
-        console.log(`App is listening on port ${process.env.PORT}`);
+        console.log(`PlantR on port ${process.env.PORT}`);
     })
