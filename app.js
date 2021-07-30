@@ -1,3 +1,4 @@
+    require("dotenv").config();
     let express = require('express');
     let app = express();
     let sequelize = require('./db');
@@ -9,7 +10,7 @@
     let biodata = require('./controllers/biodata-controller');
     let log = require('./controllers/log-controller');
 
-    require("dotenv").config;
+    
 
     sequelize.sync();
     
@@ -24,6 +25,6 @@
     app.use('/biodata', biodata);
     app.use('/log', log);
 
-    app.listen(3000, function(){
-        console.log('App is listening on port 3000');
+    app.listen(process.env.PORT, () =>{
+        console.log('App is listening on port ${process.env.PORT}');
     })

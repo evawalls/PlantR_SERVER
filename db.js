@@ -1,10 +1,7 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('PlantR', 'postgres', '41j691', {
-    host: "localhost",
+const sequelize = new Sequelize(process.env.DATABASE_URL,{
     dialect: "postgres", 
-
-}
-);
+});
 
 sequelize.authenticate().then(
     function() {

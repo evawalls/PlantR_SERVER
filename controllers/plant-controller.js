@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const  Plant= require('../db').import('../models/plant-model');
+const Plant= require('../db').import('../models/plant-model');
 
 let validateSession = require('../middleware/validate-session');
 var sequelize = require('../db');
 // var Plant = sequelize.import('../models/plant-controller');
 
 
-router.post('/', validateSession, (req, res) => {
+router.post('/add', validateSession, (req, res) => {
   const createPlant = {
     name: req.body.plant.species,
     quantity: req.body.plant.time,
@@ -19,7 +19,7 @@ router.post('/', validateSession, (req, res) => {
   
 });
 
-router.get("/", validateSession, (req, res) => {
+router.get("/plant/list", validateSession, (req, res) => {
   Plant.findAll()
   .then(plants => res.status(200).json(plants))
   .catch(err => res.status(500).json({error: err}))

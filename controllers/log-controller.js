@@ -6,7 +6,7 @@ var sequelize = require('../db');
 // var Log = sequelize.import('../models/log-controller');
 
 
-router.post('/', validateSession, (req, res) => {
+router.post('/log', validateSession, (req, res) => {
   const createLog = {
     plantId: req.plant.Id,
     date: req.body.log.date,
