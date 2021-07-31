@@ -25,6 +25,7 @@
     app.use('/biodata', biodata);
     app.use('/log', log);
 
-    app.listen(process.env.PORT, () =>{
+    app.listen(process.env.PORT, () => {
         console.log(`PlantR on port ${process.env.PORT}`);
+
     })
