@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "41J691",
+    "database": "plantr",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "41J691",
+    "database": "plantr",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "rqrullwzpxaqyr",
+    "password": "d312676d351ac6dd4456aaa6475bb1d7c98947d4082654fc4a1784e4366b43ff",
+    "database": "plantr",
+    "host": "ec2-3-214-136-47.compute-1.amazonaws.com",
+    "port": "5432",
+    "dialect": "postgres"
+  }
+}
