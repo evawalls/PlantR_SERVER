@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize(process.env.DATABASE_URL,{
-    dialect: "postgres", 
-});
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres', 
+})
 
 sequelize.authenticate().then(
     function() {
@@ -12,12 +12,12 @@ sequelize.authenticate().then(
     }
 );
 
-User = sequelize.import('./models/user-model');
-Locations = sequelize.import('./models/location-model');
-Garden = sequelize.import('./models/garden-model');
-Plant = sequelize.import('./models/plant-model');
-Biodata = sequelize.import('./models/biodata-model');
-Log = sequelize.import('./models/log-model');
+const User = sequelize.import('./models/user-model');
+const Locations = sequelize.import('./models/location-model');
+const Garden = sequelize.import('./models/garden-model');
+const Plant = sequelize.import('./models/plant-model');
+const Biodata = sequelize.import('./models/biodata-model');
+const Log = sequelize.import('./models/log-model');
 
 User.hasMany(Locations);
 User.hasMany(Garden);
