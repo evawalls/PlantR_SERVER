@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/evawalls/PlantR_SERVER/issues"
   },
-  "homepage": "https://github.com/evawalls/PlantR_SERVER#readme",
+  "homepage": "https://eva-plantr.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.2.7",
@@ -33,9 +33,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
   },
   "eslintConfig": {
     "extends": [
